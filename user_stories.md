@@ -8,4 +8,5 @@
 * As a user, I only want write access to my own bookmarks
 * As a user, I would like to browse bookmarks other users have added
 
-<img alt="Domain Modelling" src="./images/Scanned Document.png" width="400px" style="display: block;" />
+<img style="diaplay: block; text-align: center; alt='Sequence Diagram'" src="./images/Scanned Document.png" width="400px" />
+<img style="diaplay: block; text-align: center; alt='Domain Modelling'" src="./images/Scanned Document-2.png" width="400px" />
