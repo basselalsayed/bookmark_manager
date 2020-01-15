@@ -1,9 +1,11 @@
+
+
 require 'sinatra/base'
 require './lib/user_bookmarks'
 
 class BookmarkManager < Sinatra::Base
 
-  before do 
+  before do
     @bookmarks = Bookmarks.instance
   end
 
@@ -11,8 +13,12 @@ class BookmarkManager < Sinatra::Base
     erb :'bookmarks/index'
   end
 
+  post '/add_bookmark' do
+    Bookmarks.create(params[:url])
+    redirect '/bookmarks'
+  end
   get '/bookmarks' do
-    @bookmarks = Bookmarks.create("plato")
+    @bookmarks = Bookmarks.all
     erb :'bookmarks/bookmarks'
   end
 
