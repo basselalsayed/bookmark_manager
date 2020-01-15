@@ -4,7 +4,7 @@ require './lib/user_bookmarks'
 class BookmarkManager < Sinatra::Base
 
   before do 
-    @user_bookmarks = UserBookmarks.instance
+    @bookmarks = Bookmarks.instance
   end
 
   get '/' do
@@ -12,7 +12,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    @user_bookmarks = UserBookmarks.create('plato', ["www.google.com", "www.reddit.com", "www.bbc.co.uk"])
+    @bookmarks = Bookmarks.create("plato")
     erb :'bookmarks/bookmarks'
   end
 
