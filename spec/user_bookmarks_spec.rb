@@ -1,13 +1,20 @@
 require 'user_bookmarks'
 
 describe Bookmarks do
-  subject(:bm) { described_class.new('plato', ["www.google.com", "www.reddit.com", "www.bbc.co.uk"]) }
+  let(:subject) { Bookmarks }
+  
   describe '#initialization' do
-    it { expect(bm.author).to eq 'plato' }
-    it { expect(bm.all).to be_a Array }
+    it { expect(subject.all).to be_a Array }
   end
 
-  describe '#retrieve' do 
-    it { expect(subject.all).to include "4: http://www.google.com " }
+  describe '#all' do
+    it { expect(subject.all[0]).to include "http://www.google.com" }
+  end
+
+  describe "#create" do
+    it "allows a new bookmark to be created" do
+      subject.create("http://www.facebook.com")
+      expect(subject.all[-1]).to include "http://www.facebook.com"
+    end
   end
 end

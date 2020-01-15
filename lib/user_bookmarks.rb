@@ -3,28 +3,28 @@ require 'pg'
 class Bookmarks
   attr_reader :author
 
-  def initialize(author, bookmarks = [])
-    @author = author
+  def initialize(bookmarks = [])
     @bookmarks = bookmarks
   end
 
-  def self.create(author, bookmarks = [])
-    @user_bookmarks = Bookmarks.new(author, bookmarks)
+  def self.create(bookmark)
+    # @user_bookmarks = Bookmarks.new(bookmarks)
+    connection = PG.connect :dbname => environment, :user => 'bsas'
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('#{bookmark.to_s}')")
+
   end
 
   def self.instance
     @user_bookmarks
   end
 
-  def all
-    p ENV['RACK_ENV']
-    con = PG.connect :dbname => environment, :user => 'bsas'
-    result = con.exec("SELECT * FROM bookmarks") 
-    result.each { |r| p r }
-      result.map { |row| "#{row['id']}: #{row['url']} " }
+  def self.all
+    connection = PG.connect :dbname => environment, :user => 'bsas'
+    result = connection.exec("SELECT * FROM bookmarks")
+    result.map { |row| "#{row['id']}: #{row['url']}" }
   end 
 
-  def environment
+  def self.environment
     ENV['RACK_ENV'] == 'test' ? 'bookmark_manager_test' : 'bookmark_manager'
   end
 end
