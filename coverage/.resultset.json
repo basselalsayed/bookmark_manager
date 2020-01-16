@@ -2,13 +2,15 @@
   "RSpec": {
     "coverage": {
       "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/app.rb": [
+        null,
+        null,
         1,
         1,
         null,
         1,
         null,
         1,
-        2,
+        6,
         null,
         null,
         1,
@@ -47,6 +49,7 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         7,
         7,
         null,
@@ -61,29 +64,60 @@
       ],
       "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/spec/bookmark_spec.rb": [
         1,
+=======
+        0,
+        null,
+        null,
+        1,
+        null,
+        3,
+        3,
+        null,
+>>>>>>> 325125a4ec9714547053f4ee799312f8d78e9c2d
         null,
         1,
         6,
         null,
         1,
+        6,
+        null,
+        null,
+        1,
+<<<<<<< HEAD
+        2,
+        2,
         2,
         null,
         null,
         1,
-        2,
-        2,
-        2,
-        null,
-        null,
-        1,
         1,
         1,
         1,
         null,
+=======
+        5,
+        5,
+        13,
+        null,
+        null,
+        1,
+        8,
         null,
         null
       ],
       "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/spec/features/adding_bookmark_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+>>>>>>> 325125a4ec9714547053f4ee799312f8d78e9c2d
+        null,
+        null
+      ],
+      "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/spec/features/adding_bookmark_spec.rb": [
+        1,
         1,
         1,
         1,
@@ -101,12 +135,32 @@
         1,
         1,
         1,
+<<<<<<< HEAD
+        1,
+=======
+        4,
+        null,
+        1,
+        2,
+        null,
+        null,
+>>>>>>> 325125a4ec9714547053f4ee799312f8d78e9c2d
+        1,
+        null,
+        null,
         1,
         1,
+        1,
+        1,
+        null,
         null,
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1579189358
+=======
+    "timestamp": 1579111882
+>>>>>>> 325125a4ec9714547053f4ee799312f8d78e9c2d
   }
 }
