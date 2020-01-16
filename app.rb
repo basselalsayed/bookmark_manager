@@ -1,24 +1,24 @@
-
-
 require 'sinatra/base'
-require './lib/user_bookmarks'
+require './lib/bookmark'
 
 class BookmarkManager < Sinatra::Base
-
-  before do
-    @bookmarks = Bookmarks.instance
-  end
 
   get '/' do
     erb :'bookmarks/index'
   end
 
-  post '/add_bookmark' do
-    Bookmarks.create(params[:url])
+  get '/bookmarks/new' do
+    erb :'bookmarks/new'
+  end
+
+  post '/bookmarks' do
+    p params
+    Bookmark.create(title: params[:title], url: params[:url])
     redirect '/bookmarks'
   end
+
   get '/bookmarks' do
-    @bookmarks = Bookmarks.all
+    @bookmarks = Bookmark.all
     erb :'bookmarks/bookmarks'
   end
 
