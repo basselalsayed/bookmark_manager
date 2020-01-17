@@ -6,5 +6,6 @@ feature '/' do
     fill_in :url, with: 'http://www.reddit.com'
     click_button 'Save and View'
     expect(page).to have_link 'Reddit'
+    expect(page).to have_link 'Google'
   end
 end

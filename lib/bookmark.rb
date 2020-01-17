@@ -3,10 +3,13 @@ require 'pg'
 class Bookmark
   attr_reader :id, :title, :url
 
-  def initialize(id:, title:, url:)
-    @id = id
-    @title = title
-    @url = url
+  def initialize(database_row)
+    # @id = id
+    # @title = title
+    # @url = url
+    @id = database_row['id']
+    @title = database_row['title']
+    @url = database_row['url']
   end
 
   def self.create(title:, url:)
@@ -17,8 +20,8 @@ class Bookmark
   def self.all
     connection = PG.connect :dbname => environment, :user => 'bsas'
     result = connection.exec("SELECT * FROM bookmarks")
-    # result.map { |row| "#{row['id']} #{row['title']}: #{row['url']}" }
-    result.map { |row| Bookmark.new(id: row['id'], title: row['title'], url: row['url']) }
+    # result.map { |row| Bookmark.new(id: row['id'], title: row['title'], url: row['url']) }
+    result.map { |row| Bookmark.new(row) }
   end 
 
   def self.environment
