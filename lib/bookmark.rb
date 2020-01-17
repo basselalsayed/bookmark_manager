@@ -17,6 +17,11 @@ class Bookmark
     connection.exec("INSERT INTO bookmarks (title, url) VALUES ('#{title}', '#{url}')")
   end
 
+  def self.delete(id:)
+    connection = PG.connect :dbname => environment, :user => 'bsas'
+    connection.exec("DELETE FROM bookmarks WHERE id = #{id}")
+  end
+
   def self.all
     connection = PG.connect :dbname => environment, :user => 'bsas'
     result = connection.exec("SELECT * FROM bookmarks")
