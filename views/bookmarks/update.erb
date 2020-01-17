@@ -1,0 +1,12 @@
+<form action='/bookmarks/<%=@bookmark_id%>' method=post>
+  <label for=title>
+    Enter Title
+    <input type=text name=title>
+  </label>
+  <label for=url>
+    Enter URL
+    <input type=text name=url>
+  </label>
+  <button type="submit" value=put id="<%= @bookmark_id %>">Save and Update</button>
+  <input type='hidden' name='_method' value='put'>
+</form>

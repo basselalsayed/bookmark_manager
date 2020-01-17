@@ -22,6 +22,11 @@ class Bookmark
     connection.exec("DELETE FROM bookmarks WHERE id = #{id}")
   end
 
+  def self.update(id:, title:, url:)
+    connection = PG.connect :dbname => environment
+    connection.exec("UPDATE bookmarks SET title = '#{title}', url = '#{url}' WHERE id = #{id}")
+  end
+
   def self.all
     connection = PG.connect :dbname => environment
     result = connection.exec("SELECT * FROM bookmarks")

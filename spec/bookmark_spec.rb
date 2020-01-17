@@ -26,4 +26,11 @@ describe Bookmark do
       expect(subject.all).to be_empty
     end
   end
+
+  describe '.update' do
+    it 'updates a bookmark' do
+      subject.update(id: subject.all.first.id, title: 'Twitter', url: 'http://www.twiiter.com') 
+      expect(subject.all.first.title).to eq 'Twitter'
+    end
+  end
 end
