@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/app.rb": [
+      "/Users/meghanmccue/projects/bookmark_manager/app.rb": [
         1,
         1,
         null,
@@ -35,7 +35,7 @@
         1,
         null
       ],
-      "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/lib/bookmark.rb": [
+      "/Users/meghanmccue/projects/bookmark_manager/lib/bookmark.rb": [
         1,
         null,
         1,
@@ -73,7 +73,7 @@
         null,
         null
       ],
-      "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/spec/bookmark_spec.rb": [
+      "/Users/meghanmccue/projects/bookmark_manager/spec/bookmark_spec.rb": [
         1,
         null,
         1,
@@ -104,7 +104,7 @@
         null,
         null
       ],
-      "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/spec/features/adding_bookmark_spec.rb": [
+      "/Users/meghanmccue/projects/bookmark_manager/spec/features/adding_bookmark_spec.rb": [
         1,
         1,
         1,
@@ -118,7 +118,7 @@
         null,
         null
       ],
-      "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/spec/features/bookmarks_spec.rb": [
+      "/Users/meghanmccue/projects/bookmark_manager/spec/features/bookmarks_spec.rb": [
         1,
         1,
         1,
@@ -129,7 +129,7 @@
         null,
         null
       ],
-      "/Users/bsas/Dropbox/projects/makers/week4/bookmark_manager/spec/features/delete_bookmark_spec.rb": [
+      "/Users/meghanmccue/projects/bookmark_manager/spec/features/delete_bookmark_spec.rb": [
         1,
         1,
         1,
@@ -140,6 +140,6 @@
         null
       ]
     },
-    "timestamp": 1579267504
+    "timestamp": 1579267942
   }
 }
