@@ -18,6 +18,11 @@ describe Bookmark do
       subject.create(title: 'Facebook', url: 'http://www.facebook.com')
       expect(subject.all[-1].url).to eq "http://www.facebook.com"
     end
+    it 'doesnt create a bookmark with invalid url' do
+      subject.delete(id: subject.all.first.id)
+      subject.create(title: 'Facebook', url: 'facebook')
+      expect(subject.all).to be_empty
+    end
   end
 
   describe '.delete' do

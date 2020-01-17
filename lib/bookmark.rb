@@ -1,4 +1,4 @@
-require 'pg'
+require_relative 'data_base_connection'
 
 class Bookmark
   attr_reader :id, :title, :url
@@ -13,23 +13,24 @@ class Bookmark
   end
 
   def self.create(title:, url:)
-    connection = PG.connect :dbname => environment
-    connection.exec("INSERT INTO bookmarks (title, url) VALUES ('#{title}', '#{url}')")
+    return false unless is_url?(url)
+    DataBaseConnection.setup(environment)
+    DataBaseConnection.query("INSERT INTO bookmarks (title, url) VALUES ('#{title}', '#{url}')")
   end
 
   def self.delete(id:)
-    connection = PG.connect :dbname => environment
-    connection.exec("DELETE FROM bookmarks WHERE id = #{id}")
+    DataBaseConnection.setup(environment)
+    DataBaseConnection.query("DELETE FROM bookmarks WHERE id = #{id}")
   end
 
   def self.update(id:, title:, url:)
-    connection = PG.connect :dbname => environment
-    connection.exec("UPDATE bookmarks SET title = '#{title}', url = '#{url}' WHERE id = #{id}")
+    DataBaseConnection.setup(environment)
+    DataBaseConnection.query("UPDATE bookmarks SET title = '#{title}', url = '#{url}' WHERE id = #{id}")
   end
 
   def self.all
-    connection = PG.connect :dbname => environment
-    result = connection.exec("SELECT * FROM bookmarks")
+    DataBaseConnection.setup(environment)
+    result = DataBaseConnection.query("SELECT * FROM bookmarks")
     # result.map { |row| Bookmark.new(id: row['id'], title: row['title'], url: row['url']) }
     result.map { |row| Bookmark.new(row) }
   end 
@@ -38,4 +39,9 @@ class Bookmark
     ENV['RACK_ENV'] == 'test' ? 'bookmark_manager_test' : 'bookmark_manager'
   end
 
+  private
+
+  def self.is_url?(url)
+    url =~ /\A#{URI::regexp(['http', 'https'])}\z/
+  end
 end

@@ -1,7 +1,5 @@
-require 'pg'
-
 def setup_test_database
-  connection = PG.connect :dbname => 'bookmark_manager_test'
-  connection.exec('TRUNCATE TABLE bookmarks')
-  connection.exec("INSERT INTO bookmarks (title, url) VALUES ('Google', 'http://www.google.com')")
+  DataBaseConnection.setup('bookmark_manager_test')
+  DataBaseConnection.query('TRUNCATE TABLE bookmarks')
+  DataBaseConnection.query("INSERT INTO bookmarks (title, url) VALUES ('Google', 'http://www.google.com')")
 end

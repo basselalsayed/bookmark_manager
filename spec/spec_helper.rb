@@ -4,6 +4,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'database_helpers'
+require './lib/data_base_connection'
 
 ENV['RACK_ENV'] = 'test'
 

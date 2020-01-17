@@ -12,5 +12,6 @@ gem 'rerun', '~> 0.13.0'
 gem 'rspec'
 gem 'rubocop'
 gem 'sinatra'
+gem 'sinatra-flash'
 gem 'simplecov', require: false
 gem 'simplecov-console', require: false
